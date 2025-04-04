@@ -4,12 +4,12 @@ import Footer from "../components/Footer";
 
 
 const courses = [
-  { id: 1, title: "Web Development Bootcamp", price: "$99", image: "/web-dev.jpg" },
-  { id: 2, title: "UI/UX Design Masterclass", price: "$79", image: "/ui-ux.jpg" },
-  { id: 3, title: "Data Science with Python", price: "$129", image: "/data-science.jpg" },
-  { id: 4, title: "Digital Marketing Expert", price: "$89", image: "/digital-marketing.jpg" },
-  { id: 5, title: "Cyber Security Fundamentals", price: "$109", image: "/cyber-security.jpg" },
-  { id: 6, title: "AI & Machine Learning", price: "$149", image: "/ai-ml.jpg" },
+  { id: 1, title: "Web Development Bootcamp", price: "10000", image: "/web-dev.jpg" },
+  { id: 2, title: "UI/UX Design Masterclass", price: "15000", image: "/ui-ux.jpg" },
+  { id: 3, title: "Data Science with Python", price: "20000", image: "/data-science.jpg" },
+  { id: 4, title: "Digital Marketing Expert", price: "20000", image: "/digital-marketing.jpg" },
+  { id: 5, title: "Cyber Security Fundamentals", price: "15000", image: "/cyber-security.jpg" },
+  { id: 6, title: "AI & Machine Learning", price: "30000", image: "/ai-ml.jpg" },
 ];
 
 const BuyACourse = () =>  {
