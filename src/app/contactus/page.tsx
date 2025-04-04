@@ -6,11 +6,11 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 const ContactUs = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     alert("Message sent successfully!");
     setFormData({ name: "", email: "", message: "" });
@@ -27,9 +27,8 @@ const ContactUs = () => {
       <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center py-20 px-6">
         <h2 className="text-5xl font-extrabold">Get in Touch</h2>
         <p className="text-lg mt-2 font-medium">
-          We'd love to hear from you! Reach out to us for any queries.
+          We&apos;d love to hear from you! Reach out to us for any queries.
         </p>
-        <div className="absolute inset-0 bg-opacity-20 bg-black"></div>
       </div>
 
       {/* Contact Info Section */}
@@ -39,10 +38,7 @@ const ContactUs = () => {
           { icon: <FaEnvelope />, title: "Email Us", content: "support@class.com" },
           { icon: <FaMapMarkerAlt />, title: "Visit Us", content: "123 Education St, Learning City" },
         ].map((item, index) => (
-          <div
-            key={index}
-            className="p-6 bg-white shadow-xl rounded-lg transform transition hover:scale-105 hover:shadow-2xl"
-          >
+          <div key={index} className="p-6 bg-white shadow-xl rounded-lg transform transition hover:scale-105 hover:shadow-2xl">
             <div className="text-4xl text-blue-600 mx-auto">{item.icon}</div>
             <h3 className="text-xl font-bold mt-3">{item.title}</h3>
             <p className="text-gray-600 mt-1">{item.content}</p>
@@ -50,7 +46,7 @@ const ContactUs = () => {
         ))}
       </div>
 
-      {/* Contact Form Section */}
+      {/* Contact Form */}
       <div className="container mx-auto px-6 py-12">
         <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Send Us a Message</h2>
@@ -78,7 +74,7 @@ const ContactUs = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                rows="4"
+                rows={4}
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
               ></textarea>
             </div>
@@ -92,12 +88,12 @@ const ContactUs = () => {
         </div>
       </div>
 
-      {/* Google Map Section */}
+      {/* Google Map */}
       <div className="w-full h-72 mt-10">
         <iframe
           className="w-full h-full border-0"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509367!2d144.9537363155045!3d-37.81627974201237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d5df0f9fd81%3A0xf5773e0a1a48f2e!2sEducation%20Hub!5e0!3m2!1sen!2sus!4v1640709842165!5m2!1sen!2sus"
-          allowFullScreen=""
+          allowFullScreen
           loading="lazy"
         ></iframe>
       </div>
